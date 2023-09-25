@@ -10,23 +10,20 @@ formEl.addEventListener("submit", submitForm);
 function createPromise(position, delay) {
   const shouldResolve = Math.random() > 0.3; 
   return new Promise((resolve, reject) => {
-  setTimeout(() =>{
+  const timerid = setTimeout(() =>{
   if (shouldResolve) {
-     resolve(position, delay);}
+     resolve({position, delay});}
      else{
-      reject(position, delay); }
+      reject({position, delay}); }
     }, delay);
 
 });}
 
 
-
-
-
 function submitForm (event){
-  // event.preventDefault;
+  event.preventDefault;
   let delay  = formEl.delay.value
-  console.log(formEl.amount.value)
+ 
   for (let i = 1; i <= formEl.amount.value; i += 1) {
     createPromise(i, delay)
       .then(({ position, delay }) => {
