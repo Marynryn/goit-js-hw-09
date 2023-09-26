@@ -21,7 +21,7 @@ function createPromise(position, delay) {
 
 
 function submitForm (event){
-  event.preventDefault;
+  event.preventDefault();
   let delay  = formEl.delay.value
  
   for (let i = 1; i <= formEl.amount.value; i += 1) {
